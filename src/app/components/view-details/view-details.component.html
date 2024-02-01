@@ -1,0 +1,22 @@
+<table class="table border border-primary">
+  <thead>
+    <tr>
+      <th scope="col">ID.No</th>
+      <th scope="col">TASK NAME</th>
+      <th scope="col">DAY</th>
+      <th scope="col">TIME</th>
+      <th scope="col">DATE</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="table-info">
+    <tr >
+      <th scope="row">{{data.id}}</th>
+      <td>{{data.Task}}</td>
+      <td>{{data.Day}}</td>
+      <td>{{data.Time}}</td>
+      <td>{{data.Date}}</td>
+      <button routerLink="/TaskListComponent" class="btn btn-dark">BACK</button>
+    </tr>
+  </tbody>
+</table>

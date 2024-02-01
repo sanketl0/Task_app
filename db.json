@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "Task_NO": "",
+      "Task": "demo_1",
+      "Day": "sunday",
+      "Time": "02:16",
+      "Date": "2024-02-29",
+      "id": "c497"
+    },
+    {
+      "Task_NO": "",
+      "Task": "code",
+      "Day": "sunday",
+      "Time": "07:05",
+      "Date": "2024-03-08",
+      "id": "451c"
+    },
+    {
+      "id": "7b16",
+      "Task_NO": "",
+      "Task": "text",
+      "Day": "sun",
+      "Time": "",
+      "Date": "2024-03-08"
+    },
+    {
+      "Task_NO": "",
+      "Task": "Reading ",
+      "Day": "mon",
+      "Time": "03:08",
+      "Date": "2024-02-22",
+      "id": "828a"
+    },
+    {
+      "Task_NO": "",
+      "Task": "writing",
+      "Day": "Friday",
+      "Time": null,
+      "Date": null,
+      "id": "1a39"
+    }
+  ],
+  "signup": [
+    {
+      "id": "f524",
+      "name": "sanket",
+      "email": "s@gmail.com",
+      "mobile": 9923666493,
+      "password": "12345"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-lg  bg-dark border ">
+    <div class="container-fluid d-flex justify-content-center">
+        <h2 class="text-light fw-bold">TASK MANAGEMENT SYSTEMS</h2>
+    </div>
+</nav>
+
+
+<!-- to add new task or logout  -->
+<nav class="navbar navbar-expand-lg  border border-dark mb-1 ">
+    <div class="container-fluid d-flex justify-content-center">
+        <div class="d-flex">
+            <button class="btn btn-success" (click)="add()" data-bs-toggle="modal" type="button"data-bs-target="#exampleModal">Add NEW</button>&nbsp;
+            <button routerLink="/login" class="btn btn-danger" type="button" data-bs-toggle="modal">Log Out</button>
+        </div>
+    </div>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLong" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="background: blue;">
+                <h5 class="modal-title" id="exampleModalLabel" *ngIf="showadd" >Add New Task</h5>
+                <h5 class="modal-title" id="exampleModalLabel" *ngIf="showupdate">Edit Task</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="formvalue">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1"> Task</label>
+                        <input type="text" class="form-control" formControlName="Task" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Task name">
+                        <small *ngIf="formvalue.get('Task')?.invalid && formvalue.get('Task')?.touched"
+                            class="text-danger">Task is Required</small>
+                    </div>
+                    <br>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Day</label>
+                        <input type="text" class="form-control" formControlName="Day" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter Day">
+                        <small *ngIf="formvalue.get('Day')?.invalid && formvalue.get('Day')?.touched"
+                            class="text-danger">Day is Required</small>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Time</label>
+                        <input type="time" class="form-control" formControlName="Time" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter Time">
+                        <small *ngIf="formvalue.get('Time')?.invalid && formvalue.get('Time')?.touched"
+                            class="text-danger">time is Required</small>
+
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Date</label>
+                        <input type="date" class="form-control" formControlName="Date" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Enter Date">
+                        <small *ngIf="formvalue.get('Date')?.invalid && formvalue.get('Date')?.touched"
+                            class="text-danger">Date is Required</small>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" *ngIf="showadd" (click)="addtask()" class="btn btn-primary">ADD</button>
+                <button type="button" *ngIf="showupdate" (click)="updatetask()" class="btn btn-primary">update</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- to show data -->
+<div class="row m-3">
+    <div class="col-sm-4 mb-2  justify-content-center" *ngFor="let value of alltaskdata">
+        <div class="card ">
+            <div class="card-body">
+                <h5 class="card-text fw-bold">Task Name : {{value.Task}}</h5>
+                <h4>Day :{{value.Day}} </h4>
+                <h4>Time :{{value.Time}} </h4>
+                <h4>Date :{{value.Date}} </h4>
+                <button class="btn btn-outline-success" [routerLink]="['/viewdetails/'+value.id]" type="button">DETAILS</button>&nbsp;
+                <button class="btn btn-info" (click)="edit(value)" data-bs-toggle="modal"data-bs-target="#exampleModal">Update</button>&nbsp;
+                <button class="btn btn-danger" (click)="deletet(value)">DELETE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
