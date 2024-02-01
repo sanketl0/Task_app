@@ -1,7 +1,6 @@
 export class taskdata{
     
-    id:any
-    Task_NO:string ="";
+    id:any;
     Task :string="";
     Day :string="";
     Time :string="";
